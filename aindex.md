@@ -42,6 +42,12 @@ $ SHA-256 digest of contents did not verify
 
 关于无法安装的情况补充。经过不同情况的测试，终于发现了规律，只有通过adb install来安装才会有几率出现各种验签失败的情况，如果我是把安装包先传到手机上，再在手机上直接找到安装包来安装则可以正常安装。
 
+12月16日最新修改：
+adb有可能安装不上的问题的确是小米5的问题……Pixel上不会出现这个问题。暂时还没有深究是为什么。
+另外如果你们要为自己的包打上V2的签名的话，那么有几点是需要小心的。
+* 签名后不要往apk文件的comment填写东西（渠道之类的你懂的），否则在7.0的机子上会安装不了
+* 签名后不要往apk文件的META/目录下添加文件（渠道之类的你懂的），否则在7.0的机子上会安装不了
+
 参考文章：
 * apksigner工具介绍 https://developer.android.com/studio/command-line/apksigner.html
 * 签名介绍 https://developer.android.com/studio/publish/app-signing.html
